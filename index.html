@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->  <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>TDD - Test Driven Development</title>
+
+	<meta name="description" content="A discipline for making better programmers">
+	<meta name="author" content="Tiago Pais">
+	<meta name="viewport" content="width=1024, user-scalable=no">
+
+	<!-- Core and extension CSS files -->
+	<link rel="stylesheet" href="deck.js/core/deck.core.css">
+	<link rel="stylesheet" href="deck.js/extensions/goto/deck.goto.css">
+	<link rel="stylesheet" href="deck.js/extensions/menu/deck.menu.css">
+	<link rel="stylesheet" href="deck.js/extensions/navigation/deck.navigation.css">
+	<link rel="stylesheet" href="deck.js/extensions/status/deck.status.css">
+	<link rel="stylesheet" href="deck.js/extensions/hash/deck.hash.css">
+
+	<!-- Theme CSS files -->
+	<link rel="stylesheet" id="style-theme-link" href="deck.js/themes/style/neon.css">
+	<link rel="stylesheet" id="transition-theme-link" href="deck.js/themes/transition/horizontal-slide.css">
+
+	<!-- Custom CSS just for this page -->
+	<link rel="stylesheet" href="tdd.css">
+
+	<script src="deck.js/modernizr.custom.js"></script>
+</head>
+
+<body class="deck-container">
+
+<div class="slide" id="title-slide">
+	<h1>Test Driven Development</h1>
+</div>
+
+<div class="slide" id="agenda-overview">
+	<h2>Agenda</h2>
+	<ol>
+		<li class="slide">
+			<h3>Why do we need tests ?</h3>
+			<p>With a demo using an IES 2011 Validation</p>
+		</li>
+		<li class="slide">
+			<h3>What's Test Driven Development ?</h3>
+		</li>
+		<li class="slide">
+			<h3>Why should we use Test Driven Development ?</h3>
+		</li>
+		<li class="slide">
+			<h3>How does TDD work?</h3>
+			<p>Laws of TDD...</p>
+			<p><em>Demoing</em> with 7000 validations from IES 2011</p>
+		</li>
+		<li class="slide">
+			<h3>Conclusions</h3>
+		</li>
+		<li class="slide">
+			<h3>Questions ?</h3>
+		</li>
+	</ol>
+</div>
+
+<div class="slide" id="whytests-wouldyou">
+	<h2>Why do we need tests?</h2>
+	<h3 class="slide">Would you... </h3>
+	<ol>
+		<li class="slide"><h3>... fly on a plane that had not been fully tested?</h3></li>
+		<li class="slide"><h3>... take a medicine that had not undergone exhaustive testing?</h3></li>
+		<li class="slide"><h3>... take an elevator not periodically and repeatedly verified?</h3></li>
+		<li class="slide"><h3>... buy a €5 iKea dinner table (made of card-box...) without seeing all the tests it was submitted to?</h3></li>
+	</ol>
+	
+	<p><h2 class="slide warning">Still... we are capable of shipping untested code !!</h2></p>
+</div>
+
+<div class="slide" id="whytests-wouldyou-profissionalism">
+	<h2>Why do we need tests?</h2>
+	
+	<h1 class="warning">Professionalism</h1>
+	
+	<blockquote class="small footer">
+		<p>... os próprios autores do Pragmatic Programmer se recusaram a ter no livro coisas como <em>“if the system breaks”</em>, têm sempre <em>“when the system breaks”</em>....</p>
+		<p><cite>@pcalcao</cite></p>
+	</blockquote>
+</div>
+
+<div class="slide" id="whytests-coderots">
+	<h2>Why do we need tests?</h2>
+	<ol>
+		<li class="slide">
+			<h3>I find a piece of code that “rots” and "smells"</h3>
+			<ul class="no-bullet">
+				<li>... and it’s ugly</li>
+			</ul>
+		</li>
+		<li>
+			<h3 class="slide">I know I need to make a change but...</h3>
+			<ul class="no-bullet">
+			<li class="slide">... I'll need to change in multiple places</li>
+			<li class="slide">... it's hard to measure impact</li>
+			<li class="slide">... I don’t even understand it</li>
+			<li class="slide">... there’s no low level documentation</li>
+			<li class="slide">... I don’t want to touch it... it will break!</li>
+			</ul>
+		</li>
+		<li>
+			<h3 class="slide">And if I break it...</h3>
+			<ul class="no-bullet">
+				<li class="slide">...it becomes mine</li>
+				<li class="slide">... I become responsible for it !!</li>
+			</ul>
+		</li>
+	</ol>	
+	
+	<h2 class="slide warning">If we can't clean up... our code keeps getting worst and worst over time !!</h2>
+</div>
+
+<div class="slide" id="whytests-fear">
+	<h2>Why do we need tests?</h2>
+	
+	<h1 class="warning">We can't clean code until we eliminate our fear of change !</h1>
+</div>
+
+<div class="slide" id="whytests-demo">
+	<h2>Why do we need tests?</h2>
+	
+	<h1>Demo on <em>IES 2011</em></h1>
+	
+	<blockquote class="small footer">
+		<p><h6>Validação Z1036</h6></p>
+		<p><cite>IES2011</cite></p>
+	</blockquote>
+</div>
+
+<div class="slide" id="whatstdd">
+	<h2>What's Test Driven Development ?</h2>
+	
+	<ol class="no-bullet">
+		<li>
+			<h3 class="slide">TDD it's a discipline</h3>
+			<ul class="no-bullet">
+				<li class="slide">Extreme</li>
+				<li class="slide">Austere</li>
+				<li class="slide">Absurd</li>
+			</ul>
+		</li>
+		
+		<li>
+			<h3 class="slide">Impose to ensure</h3>
+			<ul class="no-bullet">
+				<li class="slide">Safety</li>
+				<li class="slide">Effectiveness</li>
+			</ul>
+		</li>
+		
+		<li>
+			<h3 class="slide">Dogmatic</h3>
+			<ul class="no-bullet">
+				<li class="slide">Using rules instead of our own brains</li>
+				<li class="slide">But we can always rely on the safety of a Dogma</li>
+				<li class="slide">Don't forget to question your dogmas every now and then...</li>
+			</ul>
+		</li>
+	<ol>
+</div>
+
+<div class="slide" id="whatstdd-testfirst">
+	<h2>What's Test Driven Development ?</h2>
+	
+	<ol class="no-bullet">
+		<li class="slide">
+			<h3 >Why write tests first?</h3>
+			<p>If we write it at the end they won't be complete!<p>
+		</li>
+		<li class="slide">
+			<h3>It's just human nature...</h3>
+			<p>Most important things always come first... the ones at the end are, sometimes, even optional or undesirable.</p>
+		</li>
+</div>
+
+<div class="slide" id="whatstdd-firstlaw">
+	<h2>First Law of TDD</h2>
+	
+	<h1 class="red">You’re not allowed to write any production code until you’ve first written a failing Unit Test.</h1>
+</div>
+
+<div class="slide" id="whatstdd-secondlaw">
+	<h2>Second Law of TDD</h2>
+	
+	<h1 class="red">You can’t write more than an Unit Test than what’s sufficient to fail</h1>
+</div>
+
+<div class="slide" id="whatstdd-thirdlaw">
+	<h2>Third Law of TDD</h2>
+	
+	<h1 class="green">You’re not allowed to write more production code than it’s sufficient to pass a failing test</h1>
+</div>
+
+<div class="slide" id="whatstdd-thirdlaw">
+	<h2>Laws of TDD</h2>
+
+	<blockquote class="medium" cite="http://www.threeriversinstitute.org/blog/?p=579">
+			<ul class="no-bullet">
+				<li class="slide">
+					<h3 class="red">Write the next test.</h3>
+					<p>While several tests may be outlined, only one is written at a time.</p>
+					<p>In pessimistic languages, add enough stubs so the test compiles.</p>
+					<p>It should fail when run.</p>
+					<p>Refactor, if necessary, to prepare for the implementation.</p>
+				</li>
+				<li class="slide"><h3 class="green">Change the logic of the system so the test passes.</h3></li>
+				<li class="slide"><h3 class="refactor">Refactor to eliminate duplication and other excess complexity</h3></li>
+			</ul>
+			<p><cite>Kent Beck</cite></p>
+		</blockquote>
+</div>
+
+<div class="slide" id="whatstdd-demo">
+	<h2>What's Test Driven Development ?</h2>
+	
+	<h1>Demo on <em>IES 2011</em></h1>
+	
+	<blockquote class="small footer">
+		<p><h6>Validação Z78</h6></p>
+		<p><h6>Validação Z1051</h6></p>
+		<p><cite>IES2011</cite></p>
+	</blockquote>
+</div>
+
+<div class="slide" id="conclusions-debug">
+	<h2>Conclusions</h2>
+	
+	<h1>Low Debugging Time</h1>
+	<div class="footer">
+		<ol>
+			<li>Usually means low productivity</li>
+			<li>We don’t wan’t people to spend time debugging</li>
+			<li>We want people to spend time writing production ready code</li>
+		</ol>
+	</div>
+</div>
+
+<div class="slide" id="conclusions-designdocuments">
+	<h2>Conclusions</h2>
+	
+	<h1>Design Documents</h1>
+	<div class="footer">
+		<ol>
+			<li>TDD gives us really good and useful (development perspective) low level specification.</li>
+			<li>Always updated.</li>
+		</ol>
+	</div>
+</div>
+
+<div class="slide" id="conclusions-decoupling">
+	<h2>Conclusions</h2>
+	
+	<h1>Decoupling</h1>
+	
+	<div class="footer">
+		<ol>
+			<li>Writing tests first leads to a better design</li>
+		</ol>
+	</div>
+</div>
+
+<div class="slide" id="conclusions-change">
+	<h2>Conclusions</h2>
+	
+	<h1>Courage to Change</h1>
+	
+	<div class="footer">
+		<ol>
+			<li>Tests eliminate the fear of change</li>
+			<li>Tests stop the code from rotten</li>
+		</ol>
+	</div>
+</div>
+
+<div class="slide" id="questions">
+	<h1>Questions ?</h1>
+</div>
+
+<a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+<a href="#" class="deck-next-link" title="Next">&#8594;</a>
+
+<form action="." method="get" class="goto-form">
+	<label for="goto-slide">Go to slide:</label>
+	<input type="number" name="slidenum" id="goto-slide">
+	<input type="submit" value="Go">
+</form>
+
+<a href="." title="Permalink to this slide" class="deck-permalink">#</a>
+
+<script src="jquery/jquery-1.6.1.min.js"></script>
+
+<!-- Deck Core and extensions -->
+<script src="deck.js/core/deck.core.js"></script>
+<script src="deck.js/extensions/menu/deck.menu.js"></script>
+<script src="deck.js/extensions/goto/deck.goto.js"></script>
+<script src="deck.js/extensions/status/deck.status.js"></script>
+<script src="deck.js/extensions/navigation/deck.navigation.js"></script>
+<script src="deck.js/extensions/hash/deck.hash.js"></script>
+
+<!-- Specific to this page -->
+<script src="tdd.js"></script>
+
+</body>
+</html>
